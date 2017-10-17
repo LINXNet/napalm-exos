@@ -1,0 +1,229 @@
+--- running_config.conf
++++ candidate_config.conf
+@@ -0,0 +1,226 @@
++#
++# Module devmgr configuration.
++#
++configure snmp sysName "switch55.the"
++configure snmp sysLocation "DFM50 Telehouse East"
++configure snmp sysContact "noc@linx.net"
++configure timezone 0 noautodst
++configure sys-recovery-level switch reset
++
++#
++# Module vlan configuration.
++#
++configure vlan default delete ports all
++configure vr VR-Default delete ports 1-3
++configure vr VR-Default add ports 1-2
++configure vlan default delete ports 2-3
++disable learning port 1
++configure vlan Default add ports 1 untagged
++
++#
++# Module fdb configuration.
++#
++
++#
++# Module rtmgr configuration.
++#
++
++#
++# Module mcmgr configuration.
++#
++disable igmp snooping vlan "Default"
++
++#
++# Module policy configuration.
++#
++
++#
++# Module aaa configuration.
++#
++
++#
++# Module acl configuration.
++#
++
++
++
++configure access-list zone SYSTEM application NetLogin application-priority 4
++configure access-list zone SYSTEM application FIPSnooping application-priority 5
++configure access-list zone SYSTEM application HealthCheckLAG application-priority 6
++configure access-list zone SYSTEM application Dot1Ag application-priority 7
++configure access-list zone SYSTEM application ESVT application-priority 8
++configure access-list zone SYSTEM application Dot1AgDefault application-priority 9
++configure access-list zone SYSTEM application FDB application-priority 10
++
++#
++# Module bfd configuration.
++#
++
++#
++# Module bgp configuration.
++#
++
++#
++# Module cfgmgr configuration.
++#
++
++#
++# Module dosprotect configuration.
++#
++
++#
++# Module dot1ag configuration.
++#
++
++#
++# Module eaps configuration.
++#
++
++#
++# Module edp configuration.
++#
++
++#
++# Module elrp configuration.
++#
++
++#
++# Module ems configuration.
++#
++
++#
++# Module epm configuration.
++#
++
++#
++# Module erps configuration.
++#
++
++#
++# Module esrp configuration.
++#
++
++#
++# Module etmon configuration.
++#
++
++#
++# Module exsshd configuration.
++#
++enable ssh2
++
++
++#
++# Module hal configuration.
++#
++configure ports 1 debounce time 0
++configure ports 2 debounce time 0
++configure ports 3 debounce time 0
++
++#
++# Module idMgr configuration.
++#
++
++#
++# Module ipSecurity configuration.
++#
++
++#
++# Module isis configuration.
++#
++
++#
++# Module lldp configuration.
++#
++
++#
++# Module mrp configuration.
++#
++
++#
++# Module msdp configuration.
++#
++
++#
++# Module netLogin configuration.
++#
++
++#
++# Module netTools configuration.
++#
++enable dhcp vlan Mgmt
++
++#
++# Module ntp configuration.
++#
++
++#
++# Module ospf configuration.
++#
++
++#
++# Module ospfv3 configuration.
++#
++
++#
++# Module pim configuration.
++#
++configure pim register-checksum-to include-data
++
++#
++# Module poe configuration.
++#
++
++#
++# Module rip configuration.
++#
++
++#
++# Module ripng configuration.
++#
++
++#
++# Module snmpMaster configuration.
++#
++
++#
++# Module stp configuration.
++#
++configure mstp region 0004966d274a
++configure stpd s0 delete vlan Default port 1
++
++#
++# Module techSupport configuration.
++#
++enable tech-support collector
++
++#
++# Module telnetd configuration.
++#
++disable telnet
++
++#
++# Module tftpd configuration.
++#
++
++#
++# Module thttpd configuration.
++#
++enable web http
++configure ssl certificate hash-algorithm sha512
++
++#
++# Module twamp configuration.
++#
++
++#
++# Module vmt configuration.
++#
++
++#
++# Module vrrp configuration.
++#
++
++#
++# Module vsm configuration.
++#
