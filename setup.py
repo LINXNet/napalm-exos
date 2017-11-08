@@ -25,7 +25,7 @@ setup(
         'Operating System :: POSIX :: Linux',
         'Operating System :: MacOS',
     ],
-    url="https://github.com/napalm-automation/napalm-exos",
+    url="https://github.com/LINXNet/napalm-exos",
     include_package_data=True,
     install_requires=reqs,
 )
